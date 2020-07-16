@@ -1,0 +1,45 @@
+<div class="jumbotron" id="statistic">
+  
+    
+              <h1 class="container text-center">Covid-19 StateWise India Data</h1>
+
+  <div class="row" >
+    
+<ul class="list-group" >
+  <li class="list-group-item active">States</li>
+  <li class="list-group-item" *ngFor="let state of states">{{state}}</li>
+ 
+</ul>
+<ul class="list-group">
+  <li class="list-group-item active">Confirmed</li>
+  <li class="list-group-item" *ngFor="let confirm of confirmed">{{confirm}}</li>
+ 
+</ul>
+<ul class="list-group">
+  <li class="list-group-item active">Recovered</li>
+  <li class="list-group-item" *ngFor="let recover of recovered">{{recover}}</li>
+ 
+</ul>
+<ul class="list-group">
+  <li class="list-group-item active">Deaths</li>
+  <li class="list-group-item" *ngFor="let death of deaths">{{death}}</li>
+ 
+</ul>
+<ul class="list-group">
+  <li class="list-group-item active">Active</li>
+  <li class="list-group-item" *ngFor="let actives of active">{{actives}}</li>
+ 
+</ul>
+<ul class="list-group">
+  <li class="list-group-item active">LastUpDate</li>
+  <li class="list-group-item" *ngFor="let update of lastupdatedtime">{{update}}</li>
+ 
+</ul><div>
+ <canvas    height="700px" width="500px"   baseChart
+  [chartType]="lineChartType"
+  [datasets]="lineChartData"
+  [labels]="lineChartLabels"
+   >
+  </canvas> </div>
+</div>
+</div>

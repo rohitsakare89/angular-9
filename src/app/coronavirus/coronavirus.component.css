@@ -1,0 +1,41 @@
+.example-panel-green.mat-select-panel {
+    background: rgba(0, 255, 0, 0.5);
+  }
+  
+table {
+    width: 100%;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
+  #statistic{
+    padding:5rem 0;
+  }
+  #statistic .card-text{
+
+    font-weight: bold;
+    font-size: 50px;
+    color:tomato;
+  }
+  #statistic .card-infected{
+    border-bottom-color: blue;
+    border-bottom-width: 10px;
+  }
+  #statistic .card-recovered{
+    border-bottom-color: lightgreen;
+    border-bottom-width: 10px;
+  }
+  #statistic .card-deaths{
+    border-bottom-color:lightsalmon;
+    border-bottom-width: 10px;
+  }
+  #statistic .card-body{
+    background-color: rgba(199, 23, 23, 0.185);
+  }
+.contact{
+    background-color: #376ac91e;
+    letter-spacing: 2px;
+    }
+  

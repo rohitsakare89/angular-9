@@ -1,0 +1,85 @@
+
+<div  id="statistic" class="contact">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col text-left">
+        <h2>STATISTIC</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center md-3">
+        <form>
+          <div class="form-group">
+             <select (change)="countryChanged($event.target.value)"     class="form-control" id="country">
+              <option selected value="global">Global</option>
+               <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+             </select>
+          </div>
+        </form>
+    </div>
+  </div>
+  <div class="row">
+    <div  class="col-md-4 md-3">
+      <div class="card card-infected">
+        <div class="card-body">
+          <h2 class="card-title">INFECTED</h2>
+          <P class="card-text" [countUp]="data.confirmed">{{data.confirmed | number}}</P>
+          <p>{{data.lastupdate | date:'medium'}}</p>
+          <p>Number of Active Cases of Covid-19</p>
+        </div>
+      </div>
+    </div>
+    <div  class="col-md-4 md-3">
+      <div class="card card-recovered">
+        <div class="card-body">
+          <h2 class="card-title">RECOVERED</h2>
+          <P class="card-text" [countUp]="data.recovered">{{data.recovered | number}}</P>
+          <p>{{data.lastupdate | date:'medium'}}</p>
+          <p>Number of Recovered Cases of Covid-19</p>
+        </div>
+      </div>
+    </div>
+    <div  class="col-md-4 md-3">
+      <div class="card card-deaths">
+        <div class="card-body">
+          <h2 class="card-title">DEATHS</h2>
+          <P class="card-text" [countUp]="data.deaths">{{data.deaths | number}}</P>
+          <p>{{data.lastupdate | date:'medium'}}</p>
+          <p>Number of Death Cases of Covid-19</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div >
+  <div class="container">
+    <div class="row">
+<div class="col chart-wrapper">
+  <canvas *ngIf="global"       baseChart
+  [chartType]="lineChartType"
+  [datasets]="lineChartData"
+  [labels]="lineChartLabels"
+   >
+  </canvas><hr>
+  <div class="row">
+  <div *ngIf="!global"  >
+    <h1>Bar Chart </h1>
+  <canvas  height="700px" width="500px" baseChart
+  [chartType]="barChartType"
+  [datasets]="barChartData"
+  [labels]="barChartLabels"
+  [colors]="barChartColors" ></canvas>
+</div><br><hr>
+  <div *ngIf="!global">
+    <h1>Pie Chart</h1>
+  <canvas   height="700px" width="500px" baseChart
+  [chartType]="pieChartType"
+  [datasets]="pieChartData"
+  [labels]="pieChartLabels" ></canvas>
+</div></div>
+</div>
+    </div>
+  </div>
+</div>
+
+
